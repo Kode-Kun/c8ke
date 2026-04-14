@@ -8,8 +8,9 @@ chippy
 test
 write
 chasm
-rom.c8
-rom.8o
-rom.ch8
+*.c8
+*.8o
+*.ch8
+*.chasm
 build/
 lib/

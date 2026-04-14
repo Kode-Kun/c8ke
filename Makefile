@@ -49,7 +49,7 @@ $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
 clean:
-	rm -f $(EXECC) $(WRITE)
+	rm -f $(EXECC) $(EXECA) $(WRITE)
 	rm -rf $(BUILD_DIR)
 
 
