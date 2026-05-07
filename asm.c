@@ -186,6 +186,9 @@ instruction_t lex(char *line, char *filepath, int linenum)
       if(str_to_hex(data, 0) > 0xFF){ // if data provided can't be represented in 8 bits
 	fprintf(stderr, ERROR_FORMAT, filepath, tok.line, tok.col, CONSTANT8_SIZE_ERROR);
 	exit(1);
+      } else if(isalpha(data[2]) && data[2] != 'x' && data[2] != 'b'){
+	fprintf(stderr, ERROR_FORMAT, filepath, tok.line, tok.col, CONSTANT_NOTATION_ERROR);
+	exit(1);
       }
       tok.kind = TokenConst;
       tok.data = data;
