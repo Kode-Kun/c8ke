@@ -221,9 +221,10 @@ instruction_t lex(char *line, char *filepath, int linenum)
 	}
       }
     }
-
-    if(tok.kind == TokenNull && tok.data == NULL){ // if we still didn't get a match, return unkown error
-      fprintf(stderr, ERROR_FORMAT, filepath, tok.line, tok.col, UNKNOWN_ERROR); // if we encounter an invalid token altogether
+    // if we still didn't get a match, return unkown error
+    if(tok.kind == TokenNull && tok.data == NULL){
+      // if we encounter an invalid token altogether
+      fprintf(stderr, ERROR_FORMAT, filepath, tok.line, tok.col, UNKNOWN_ERROR);
       exit(1);
     }
 
